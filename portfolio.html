@@ -221,6 +221,7 @@
             </div>
         </section>
     </main>
+    <!-- ФУТЕР -->
     <footer class="footer">
         <div class="container">
           <div class="address-content">
@@ -237,8 +238,8 @@
           </div>
               
           <div class="footer-icon">
-          <h2 class="footer-title">приєднуйтесь</h2>
-          <ul class="footer-soc-list list">
+            <h2 class="footer-title">приєднуйтесь</h2>
+            <ul class="footer-soc-list list">
             <li class="footer-soc-item">
               <a href="" class="footer-soc-link link">
                 <svg class="footer-soc-icon" width="20" height="20">
@@ -267,8 +268,29 @@
                 </svg>
               </a>
             </li>
-          </ul>
+            </ul>
           </div>
+          <!-- Форма подписки в Футере-->
+          
+          <form class="form-footer">
+            <p class="footer-title">Підпишіться на розсилку</p>
+            <div>
+              <label for="footer-email"></label>
+              <input 
+                class="form-footer-input"
+                type="email" 
+                name="form-footer-email" 
+                id="footer-email"
+                placeholder="E-mail"
+              />
+              <button type="submit" class="subscribe-btn-send">
+                Підписатися
+                <svg class="form-icon-send" width="20" height="20">
+                  <use href="./images/icons.svg#icon-send"></use>
+                </svg>
+              </button>
+            </div>
+          </form>
         </div>
     </footer>
 </body>
