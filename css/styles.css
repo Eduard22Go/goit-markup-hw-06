@@ -676,7 +676,12 @@ button {
     justify-content: center;
   }
 
-  .modal-close-btn:hover {
+  .modal-close-btn {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+  }
+
+  .modal-close-btn:hover,
+  .modal-close-btn:focus {
     fill: var(--header-link-color);
   }  
   
@@ -696,18 +701,17 @@ button {
     margin-right:40px;
     margin-left: 40px;
     margin-bottom: 12px;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
 
     width: 448px;
     height: 23px;
 
-    font-family: "Roboto";
-    font-style: bold;
-    font-size: "20px";
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 20px;
     line-height: 1,15;
     text-align: сenter;
-    /* vertical-align: Top; */
     letter-spacing: 3%;
 
     color:var(--headers-color);
@@ -758,6 +762,7 @@ button {
 .modal-field {
     margin-bottom: 10px;
 }
+
 .field-input-icon {
     display: flex;
     position: relative;
@@ -765,10 +770,6 @@ button {
     align-content: center;
 
     width: 100%;
-    height: 40px;
-    /* border: 0; */
-    border: 1px solid rgba(33, 33, 33, 0.2);
-    border-radius: 4px;
 }
 
 .field-input-icon  .field-icon {
@@ -776,18 +777,51 @@ button {
     top: 50%;
     left: 12px;
     transform: translateY(-50%);
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .field-input {
     padding-left: 42px;
+    padding-top:0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
     width: 100%;
+
+    height: 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+  
+    color: var(--secondary-text-color);
+    background-color: transparent;
+    outline: transparent;
+
+    cursor: pointer;
+
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* stop */
-.field-input:focus-within + .field-icon {
-    fill: blue;    
+
+.field-input::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+  
+    color: rgba(117, 117, 117, 0.5);
+  }
+
+
+.field-input:focus + .field-icon {
+    fill:var(--header-link-color)   
 }
-.field-input-icon:focus-within {
-    border: 2px solid blue;
+.field-input:focus {
+    border: 1px solid var(--header-link-color);
+    border-radius: 4px;
+}
+
+.field-input.coment:focus {
+    border: 1px solid var(--header-link-color);
+    border-radius: 4px;
 }
 
 .license {
@@ -795,6 +829,7 @@ button {
     -moz-appearance: none;
     appearance: none;
     position: absolute;
+
 }
 
 .field-license {
@@ -811,6 +846,13 @@ button {
     height: 15px;
     border: 2px solid var(--headers-color);
     border-radius: 2px;
+
+    transition: 
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-image 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-size 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-origin 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .license:checked + .icon-license {
@@ -830,9 +872,11 @@ button {
     font-size: 14px;
     line-height:1.7;
     
-    align: left;
+    /* align: left; */
     vertical-align: top;
     letter-spacing: 3%;
+
+    cursor: pointer;
 }
 
 .license-text {
@@ -863,8 +907,8 @@ button {
     font-style: bold;
     font-size: 16px;
     line-height:1.9;
-    align: center;
-    vertical-align: center;
+    /* align: center; */
+    /* vertical-align: center; */
     letter-spacing: 6%;
 }
 
