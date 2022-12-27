@@ -341,6 +341,7 @@
         </section>
 
     </main>  
+    <!-- ФУТЕР -->
     <footer class="footer">
         <div class="container">
           <div class="address-content">
@@ -389,10 +390,31 @@
             </li>
             </ul>
           </div>
+          <!-- Форма подписки в Футере-->
+          
+          <form class="form-footer">
+            <p class="footer-title">Підпишіться на розсилку</p>
+            <div>
+              <label for="footer-email"></label>
+              <input 
+                class="form-footer-input"
+                type="email" 
+                name="form-footer-email" 
+                id="footer-email"
+                placeholder="E-mail"
+              />
+              <button type="submit" class="subscribe-btn-send">
+                Підписатися
+                <svg class="form-icon-send" width="20" height="20">
+                  <use href="./images/icons.svg#icon-send"></use>
+                </svg>
+              </button>
+            </div>
+          </form>
         </div>
     </footer>
 
-    <!-- Модальное окно -->
+    <!-- Модальное окно в Hero-->
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button type="button" class="modal-close-btn" data-modal-close>
@@ -401,7 +423,7 @@
           </svg>
         </button>
         <p class="modal-header">Залиште свої дані, ми вам передзвонимо</p>
-        <div class="modal-inputs">
+        <form class="modal-inputs">
           <div class="modal-field">
             <label for="name" class="field-label" >Ім'я</label>
             <div class="field-input-icon">
@@ -433,16 +455,16 @@
             <label for="coment" class="field-label" >Коментар</label>
             <textarea class="field-input coment" name="coment" id="coment" placeholder="Введіть текст" ></textarea>
           </div>
-        </div>
-        <div class="field-license">
-          <label for="license" class="field-label-license" >
-            <input class="license" type="checkbox" name="license" value="license" id="license">
-            <span class="icon-license"></span>
-            <span class="license-text">Погоджуюся з розсилкою та приймаю&nbsp</span>
-            <span><a href="" class="license-link">Умови договору</a></span> 
-          </label>
-        </div>
-        <button type="submit" class="modal-btn-send">Відправити</button>  
+          <div class="field-license">
+            <label for="license" class="field-label-license" >
+              <input class="license" type="checkbox" name="license" value="license" id="license">
+              <span class="icon-license"></span>
+              <span class="license-text">Погоджуюся з розсилкою та приймаю&nbsp</span>
+              <span><a href="" class="license-link">Умови договору</a></span> 
+            </label>
+          </div>
+          <button type="submit" class="modal-btn-send">Відправити</button>  
+        </form>
       </div>
     </div>
   <script src="./js/modal.js"></script>
